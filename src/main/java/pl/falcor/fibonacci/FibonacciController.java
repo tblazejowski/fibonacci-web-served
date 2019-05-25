@@ -12,7 +12,7 @@ public class FibonacciController {
     @GetMapping("/fibonacci")
     public String fibonacciForm(Model model) {
         model.addAttribute("input", new Fibonacci());
-        return "index";
+        return "fibonacci";
     }
 
     @PostMapping("/fibonacci")

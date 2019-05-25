@@ -12,12 +12,20 @@
     <title>Fibonacci served on Web</title>
 </head>
 <body>
-<div class="form-group">
-    <div class="col-md-4 mb-3">
-        <br>
-        <a href="/fibonacci" class="btn btn-secondary" role="button" aria-pressed="true">Experience Fibonacci</a>
+<form action="#" th:action="@{/fibonacci}" th:object="${input}" method="post">
+    <div class="form-group">
+        <div class="col-md-3 mb-3">
+            <br>
+            <label for="input">Enter number below:</label>
+            <input type="number" th:field="*{inputValue}" class="form-control" id="input" min="0">
+            <small id="help" class="form-text text-muted">Provided number indicates position in Fibonacci sequence.
+            </small>
+            <br>
+            <button type="submit" class="btn btn-primary">Calculate Fibonacci</button>
+        </div>
     </div>
-</div>
+
+</form>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
